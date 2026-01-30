@@ -81,3 +81,10 @@ When creating a new feature:
 - H2 in-memory database for development
 - JPA entities use `@GeneratedValue(strategy = GenerationType.SEQUENCE)`
 - Entity equality based on ID (see Task.equals/hashCode pattern)
+
+## Testing
+
+- k6 tests are located in `src/test/k6`
+- k6 tests can be run with `k6 run src/test/k6/...`
+- https://github.com/johannest/k6-demo/blob/main/book-store.js is a good example of a k6 test
+- https://grafana.com/docs/k6/latest/ is a good resource for learning k6
