@@ -2,10 +2,7 @@ package com.example.application.views;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
-import com.vaadin.flow.component.html.Footer;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Header;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.SvgIcon;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.sidenav.SideNav;
@@ -17,6 +14,7 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.server.menu.MenuConfiguration;
 import com.vaadin.flow.server.menu.MenuEntry;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+
 import java.util.List;
 
 /**
@@ -26,7 +24,7 @@ import java.util.List;
 @AnonymousAllowed
 public class MainLayout extends AppLayout implements AfterNavigationObserver {
 
-    private H1 viewTitle;
+    private H3 viewTitle;
 
     public MainLayout() {
         setPrimarySection(Section.DRAWER);
@@ -38,15 +36,15 @@ public class MainLayout extends AppLayout implements AfterNavigationObserver {
         DrawerToggle toggle = new DrawerToggle();
         toggle.setAriaLabel("Menu toggle");
 
-        viewTitle = new H1();
-        viewTitle.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
+        viewTitle = new H3();
+        viewTitle.addClassNames(LumoUtility.FontSize.MEDIUM, LumoUtility.Margin.NONE);
 
         addToNavbar(true, toggle, viewTitle);
     }
 
     private void addDrawerContent() {
-        Span appName = new Span("My App");
-        appName.addClassNames(LumoUtility.FontWeight.SEMIBOLD, LumoUtility.FontSize.LARGE);
+        H3 appName = new H3("k6 Demo App");
+        appName.addClassNames(LumoUtility.FontWeight.EXTRABOLD, LumoUtility.FontSize.LARGE);
         Header header = new Header(appName);
 
         Scroller scroller = new Scroller(createNavigation());

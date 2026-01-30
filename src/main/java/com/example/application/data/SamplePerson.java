@@ -2,16 +2,25 @@ package com.example.application.data;
 
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+
 import java.time.LocalDate;
 
 @Entity
 public class SamplePerson extends AbstractEntity {
 
+    @NotEmpty
     private String firstName;
+    @NotEmpty
     private String lastName;
+    @NotEmpty
     @Email
     private String email;
     private String phone;
+    @NotNull
+    @Past
     private LocalDate dateOfBirth;
     private String occupation;
     private String role;

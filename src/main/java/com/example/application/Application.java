@@ -3,15 +3,16 @@ package com.example.application;
 import com.example.application.data.SamplePersonRepository;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.page.AppShellConfigurator;
-import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.component.page.Push;
 import com.vaadin.flow.theme.lumo.Lumo;
-import javax.sql.DataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.jdbc.autoconfigure.ApplicationDataSourceScriptDatabaseInitializer;
 import org.springframework.boot.sql.autoconfigure.init.SqlInitializationProperties;
 import org.springframework.context.annotation.Bean;
+
+import javax.sql.DataSource;
 
 /**
  * The entry point of the Spring Boot application.
@@ -23,8 +24,8 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @StyleSheet(Lumo.STYLESHEET)
 @StyleSheet("styles.css")
+@Push
 @EnableConfigurationProperties(SqlInitializationProperties.class)
-@Theme(value = "my-app")
 public class Application implements AppShellConfigurator {
 
     public static void main(String[] args) {
